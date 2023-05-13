@@ -29,3 +29,4 @@ Contributions are always welcome.  If you see any room for improvement, feel fre
 MIT License  
 
 ## Image
+![app](https://github.com/SnubStumpy2007/Week-3/assets/25469843/79f19a63-2cd6-4e7f-81b9-d9fb4ff69d52)
