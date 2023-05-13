@@ -19,7 +19,7 @@ function generatePassword() {
  console.log(passLength);
  
  // prompts for uppercase, lowercase, numbers and symbols.  Since we use the confirm method, all values are booleans, akd truthy or falsys
- let passUpper = confirm("Do you desire uppercase characters?  Yes or No?  (Answers are case sensitive.");
+ let passUpper = confirm("Do you desire uppercase characters?");
   console.log(passUpper);
 
  let passLower = confirm("Do you desire lowercase?");
@@ -37,6 +37,8 @@ console.log(passLower);
     return;
   }
 
+  // Variables used for the password generator.
+  // Cleaned up the the aid of tutor Ddominique Meeks Gombe.
   let password = "";
   let characters = "";
   let upperCase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
