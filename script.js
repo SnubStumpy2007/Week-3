@@ -4,12 +4,11 @@ var generateBtn = document.querySelector("#generate");
 // Write password to the #password input
 // Create variables in an object for the various characters in the password
 
-// https://www.tutorialstonight.com/password-generator-in-javascript
+// https://www.tutorialstonight.com/password-generator-in-javascript for some inspiration and study
 function generatePassword() {
  
-
-  // prompts for selelctions
-  // first prompt.  Uses a prompt, then a parse to an integer.  Then uses an if statement to check the length or if the entry is an integer.  Program terminates
+  // Prompts and confirms for selelctions
+  // First prompt.  Uses a prompt, then a parse to an integer.  Then uses an if statement to check the length or if the entry is an integer.  Program terminates
   // upon an invalid answer
  let passLength = parseInt(prompt("Enter a desired length for your password. 8-128"));
   if (isNaN(passLength) || passLength < 8 || passLength > 128) {
@@ -46,6 +45,7 @@ console.log(passLower);
   let numbers = '0123456789';
   let symbols = '!@#$%^&*';
 
+  // If statements.  If a certain item was selected, then run that if statement, then run the generator for that selection.
   if (passUpper) {
     characters += upperCase;
     password += getRandomChar(upperCase); //ensures at least one uppercase char is in the password
@@ -64,26 +64,25 @@ console.log(passLower);
     password += getRandomChar(symbols);
   }
 
-
+  //  While statement.  While password generation is below the length selected, continue generating random characters until that limit is reached.
   while(password.length < passLength) {
     password += getRandomChar(characters)
   }
   
-  console.log(password);
+  // console.log for testing purposes
+  // console.log(password);
 
   return password;
 
-  // functions for generating random passwords
-
-
-
 }  // function ends
 
+// Function for generating the passwords, using the Math.random() methods.
 function getRandomChar(characters){
   const random = Math.floor(Math.random() * characters.length);
   return characters.charAt(random);
 }
 
+//  Function for when the button is pressed on the webpage to generate the password.
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
@@ -95,13 +94,3 @@ function writePassword() {
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
-
-
-
-// if (passNumber === "Yes") {
-//   console.log("yes for lowercase.  place code here")
-//  } else if ( passNumber === "No") {
-//   console.log("no.  exit loop")
-//  } else {
-//   alert("Enter another value");
-//  }
